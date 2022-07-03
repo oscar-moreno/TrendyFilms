@@ -31,6 +31,7 @@
 		5553B447287025D70008944D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B446287025D70008944D /* HomeRouter.swift */; };
 		5553B449287027DB0008944D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B448287027DB0008944D /* HomeViewModel.swift */; };
 		5553B44B287047190008944D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B44A287047190008944D /* Utils.swift */; };
+		55D3491B28720B78005A88D3 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D3491A28720B78005A88D3 /* SearchController.swift */; };
 		DF709C108F8A685082657B17 /* Pods_TrendyFilms_TrendyFilmsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349C78317E58C7879DBB6869 /* Pods_TrendyFilms_TrendyFilmsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		5553B446287025D70008944D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		5553B448287027DB0008944D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5553B44A287047190008944D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		55D3491A28720B78005A88D3 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		5986CA5D258742B043B41E47 /* Pods-TrendyFilms-TrendyFilmsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendyFilms-TrendyFilmsUITests.release.xcconfig"; path = "Target Support Files/Pods-TrendyFilms-TrendyFilmsUITests/Pods-TrendyFilms-TrendyFilmsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6842839CED1DD19889B1A30B /* Pods_TrendyFilms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrendyFilms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70945CA14D56BD83AEC5DEDF /* Pods-TrendyFilms-TrendyFilmsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrendyFilms-TrendyFilmsUITests.debug.xcconfig"; path = "Target Support Files/Pods-TrendyFilms-TrendyFilmsUITests/Pods-TrendyFilms-TrendyFilmsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				55275F8F2870B40800B78EB6 /* Cell */,
+				55D3491928720B4E005A88D3 /* Search */,
 				5553B442287025220008944D /* HomeView.swift */,
 				5553B443287025220008944D /* HomeView.xib */,
 			);
@@ -293,6 +296,14 @@
 				55275F8B28708D8700B78EB6 /* RequestManager.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		55D3491928720B4E005A88D3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				55D3491A28720B78005A88D3 /* SearchController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		77D92E1F07DF968A211ADF93 /* Pods */ = {
@@ -578,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55275F992871548D00B78EB6 /* DetailView.swift in Sources */,
+				55D3491B28720B78005A88D3 /* SearchController.swift in Sources */,
 				55275F922870B42600B78EB6 /* FilmCell.swift in Sources */,
 				5553B444287025220008944D /* HomeView.swift in Sources */,
 				55275F9E2871645500B78EB6 /* DetailRouter.swift in Sources */,

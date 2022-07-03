@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class HomeView: UIViewController {
   
@@ -16,13 +17,19 @@ class HomeView: UIViewController {
   var homeViewModel = HomeViewModel()
   var homeRouter = HomeRouter()
   var films = [Film]()
+  var searchedFilms = [Film]()
   var disposeBag = DisposeBag()
+  lazy var searchController = SearchController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.navigationItem.title = "Trendy Films List"
+    filmsTable.delegate = self
+    filmsTable.dataSource = self
     setTableView()
     homeViewModel.bind(view: self, router: homeRouter)
     getData()
+    setSearchBar()
   }
   
   func setTableView(){
@@ -31,14 +38,18 @@ class HomeView: UIViewController {
   }
   
   func updateTableView() {
+    
     DispatchQueue.main.async {
+      
       self.activityIndicator.stopAnimating()
       self.activityIndicator.isHidden = true
       self.filmsTable.reloadData()
+      
     }
   }
   
   func getData() {
+    
     return homeViewModel.getFilms()
       .subscribe(on: MainScheduler.instance)
       .observe(on: MainScheduler.instance)
@@ -47,8 +58,28 @@ class HomeView: UIViewController {
         self.updateTableView()
       } onError: { error in
         print(error)
-      } onCompleted: { }
+      }
       .disposed(by: disposeBag)
+    
+  }
+  
+  func setSearchBar() {
+    
+    let searchBar = searchController.searchBar
+    searchBar.delegate = self
+    navigationItem.searchController = searchController
+    
+    searchBar.rx.text.orEmpty.distinctUntilChanged()
+      .subscribe { result in
+        self.searchedFilms = self.films.filter({ film in
+          self.updateTableView()
+          return film.title.contains(result)
+        })
+      } onError: { error in
+        print(error)
+      }
+      .disposed(by: disposeBag)
+
   }
 
 }
@@ -58,16 +89,37 @@ class HomeView: UIViewController {
 extension HomeView: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return films.count
+    
+    if searchController.isActive && !searchController.searchBar.text!.isEmpty {
+      return searchedFilms.count
+    } else {
+      return films.count
+    }
+    
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     let cell = filmsTable.dequeueReusableCell(withIdentifier: "FilmCell") as! FilmCell
-    cell.filmTitle.text = films[indexPath.row].title
-    cell.filmRating.text = "Rating: " + String(films[indexPath.row].rating)
-    cell.filmOverview.text = films[indexPath.row].overview
-    cell.filmImage.getFilmImage(from: Utils.URL.baseImageUrl+films[indexPath.row].imagePath, placeHolder: UIImage(named: "NoImage")!)
+    
+    if searchController.isActive && !searchController.searchBar.text!.isEmpty {
+      
+      cell.filmTitle.text = searchedFilms[indexPath.row].title
+      cell.filmRating.text = "Rating: " + String(searchedFilms[indexPath.row].rating)
+      cell.filmOverview.text = searchedFilms[indexPath.row].overview
+      cell.filmImage.getFilmImage(from: Utils.URL.baseImageUrl+searchedFilms[indexPath.row].imagePath, placeHolder: UIImage(named: "NoImage")!)
+      
+    } else {
+      
+      cell.filmTitle.text = films[indexPath.row].title
+      cell.filmRating.text = "Rating: " + String(films[indexPath.row].rating)
+      cell.filmOverview.text = films[indexPath.row].overview
+      cell.filmImage.getFilmImage(from: Utils.URL.baseImageUrl+films[indexPath.row].imagePath, placeHolder: UIImage(named: "NoImage")!)
+      
+    }
+    
     return cell
+    
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -80,6 +132,19 @@ extension HomeView: UITableViewDataSource {
 
 extension HomeView: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    homeViewModel.goToDetailView(filmId: String(films[indexPath.row].id))
+    var film = films[indexPath.row]
+    if searchController.isActive, searchController.searchBar.text != "" {
+      film = searchedFilms[indexPath.row]
+    }
+    homeRouter.openDetailView(filmId: String(film.id))
+  }
+}
+
+//MARK: - UISearchBarDelegate
+
+extension HomeView: UISearchBarDelegate {
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    guard films.count == searchedFilms.count else { return }
+    updateTableView()
   }
 }
