@@ -42,8 +42,8 @@ class DetailView: UIViewController {
         self.cachedFilms.append(film)
         self.displayFilmData(film.id)
       } onError: { error in
-        print(error)
-      } onCompleted: { }
+        print("ERROR: Error getting film detail -> \(error.localizedDescription)")
+      }
       .disposed(by: disposeBag)
   }
   
@@ -56,9 +56,7 @@ class DetailView: UIViewController {
           }
         },
         onError: { error in
-          print(error.localizedDescription)
-        },
-        onCompleted: {
+          print("ERROR: Error getting film image -> \(error.localizedDescription)")
         }).disposed(by: disposeBag)
   }
   

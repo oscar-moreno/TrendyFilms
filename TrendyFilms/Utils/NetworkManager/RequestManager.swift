@@ -50,7 +50,7 @@ class RequestManager {
       let decoder = JSONDecoder()
       let films = try decoder.decode(Films.self, from: data)
       
-      observer.onNext(films.Films)
+      observer.onNext(films.films)
       
     } catch let error{
       observer.onError(error)
@@ -73,12 +73,12 @@ class RequestManager {
         
         switch response.statusCode {
         case 200:
-          print("INFO: Successful response (Code 200)")
+          print(Utils.Responses.successResponse)
           self.parseJsonFilmDetail(source: data, to: observer)
         case 401:
-          print("ERROR: Access not authorized (Code 401)")
+          print(Utils.Responses.forbidenResponse)
         default:
-          print("ERROR: Uknown error in request")
+          print(Utils.Responses.unknownError)
         }
         
         observer.onCompleted()
@@ -119,14 +119,14 @@ class RequestManager {
         
         switch response.statusCode {
         case 200:
-          print("INFO: Successful response (Code 200)")
+          print(Utils.Responses.successResponse)
           guard let image = UIImage(data: data) else { return }
           observer.onNext(image)
         case 401:
-          print("ERROR: Access not authorized (Code 401)")
+          print(Utils.Responses.forbidenResponse)
           observer.onNext(placeHolderImage)
         default:
-          print("ERROR: Uknown error in request. No image")
+          print(Utils.Responses.successResponse)
           observer.onNext(placeHolderImage)
         }
                 
@@ -134,8 +134,7 @@ class RequestManager {
         
       }).resume()
       
-      //MARK: return our disposable
-      return Disposables.create {}
+      return Disposables.create()
       
     }
   }

@@ -9,10 +9,10 @@ import Foundation
 
 struct Films: Codable {
   
-  let Films: [Film]
+  let films: [Film]
   
   enum CodingKeys: String, CodingKey {
-    case Films = "results"
+    case films = "results"
   }
   
 }
