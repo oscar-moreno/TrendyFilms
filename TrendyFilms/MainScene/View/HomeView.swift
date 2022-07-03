@@ -66,7 +66,7 @@ extension HomeView: UITableViewDataSource {
     cell.filmTitle.text = films[indexPath.row].title
     cell.filmRating.text = "Rating: " + String(films[indexPath.row].rating)
     cell.filmOverview.text = films[indexPath.row].overview
-    cell.filmImage.getFilmImage(from: "\(Utils.URL.baseImageUrl)\(films[indexPath.row].imageUrl)", placeHolder: UIImage(named: "NoImage")!)
+    cell.filmImage.getFilmImage(from: Utils.URL.baseImageUrl+films[indexPath.row].imagePath, placeHolder: UIImage(named: "NoImage")!)
     return cell
   }
   
@@ -74,4 +74,12 @@ extension HomeView: UITableViewDataSource {
     return 200
   }
   
+}
+
+//MARK: - UITableViewDelegate
+
+extension HomeView: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    homeViewModel.goToDetailView(filmId: String(films[indexPath.row].id))
+  }
 }

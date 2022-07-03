@@ -23,14 +23,14 @@ struct Film: Codable {
   let title: String
   let overview: String
   let rating: Double
-  let imageUrl: String
+  let imagePath: String
   
   enum CodingKeys: String, CodingKey {
     case id
     case title
     case overview
     case rating = "vote_average"
-    case imageUrl = "poster_path"
+    case imagePath = "poster_path"
   }
   
 }

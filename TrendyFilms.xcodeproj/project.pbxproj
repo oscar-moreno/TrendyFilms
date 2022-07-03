@@ -14,6 +14,11 @@
 		55275F922870B42600B78EB6 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F902870B42600B78EB6 /* FilmCell.swift */; };
 		55275F932870B42600B78EB6 /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55275F912870B42600B78EB6 /* FilmCell.xib */; };
 		55275F962870D48200B78EB6 /* UIImageView+URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F952870D48200B78EB6 /* UIImageView+URLSession.swift */; };
+		55275F992871548D00B78EB6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F972871548D00B78EB6 /* DetailView.swift */; };
+		55275F9A2871548D00B78EB6 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55275F982871548D00B78EB6 /* DetailView.xib */; };
+		55275F9C287162DA00B78EB6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9B287162DA00B78EB6 /* DetailViewModel.swift */; };
+		55275F9E2871645500B78EB6 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9D2871645500B78EB6 /* DetailRouter.swift */; };
+		55275FA02871660D00B78EB6 /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9F2871660D00B78EB6 /* FilmDetail.swift */; };
 		5553B406287020560008944D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B405287020560008944D /* AppDelegate.swift */; };
 		5553B408287020560008944D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B407287020560008944D /* SceneDelegate.swift */; };
 		5553B40F287020590008944D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5553B40E287020590008944D /* Assets.xcassets */; };
@@ -54,6 +59,11 @@
 		55275F902870B42600B78EB6 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		55275F912870B42600B78EB6 /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
 		55275F952870D48200B78EB6 /* UIImageView+URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLSession.swift"; sourceTree = "<group>"; };
+		55275F972871548D00B78EB6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		55275F982871548D00B78EB6 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		55275F9B287162DA00B78EB6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		55275F9D2871645500B78EB6 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		55275F9F2871660D00B78EB6 /* FilmDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
 		5553B402287020560008944D /* TrendyFilms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendyFilms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5553B405287020560008944D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5553B407287020560008944D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +257,7 @@
 		5553B43C2870219F0008944D /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				55275F9D2871645500B78EB6 /* DetailRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 		5553B43D287021A40008944D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				55275F9B287162DA00B78EB6 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +273,8 @@
 		5553B43E287021AC0008944D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55275F972871548D00B78EB6 /* DetailView.swift */,
+				55275F982871548D00B78EB6 /* DetailView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +282,7 @@
 		5553B43F287021B30008944D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55275F9F2871660D00B78EB6 /* FilmDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -415,6 +430,7 @@
 			files = (
 				5553B412287020590008944D /* LaunchScreen.storyboard in Resources */,
 				55275F932870B42600B78EB6 /* FilmCell.xib in Resources */,
+				55275F9A2871548D00B78EB6 /* DetailView.xib in Resources */,
 				5553B40F287020590008944D /* Assets.xcassets in Resources */,
 				5553B445287025220008944D /* HomeView.xib in Resources */,
 			);
@@ -561,13 +577,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55275F992871548D00B78EB6 /* DetailView.swift in Sources */,
 				55275F922870B42600B78EB6 /* FilmCell.swift in Sources */,
 				5553B444287025220008944D /* HomeView.swift in Sources */,
+				55275F9E2871645500B78EB6 /* DetailRouter.swift in Sources */,
 				5553B447287025D70008944D /* HomeRouter.swift in Sources */,
 				5553B406287020560008944D /* AppDelegate.swift in Sources */,
 				5553B449287027DB0008944D /* HomeViewModel.swift in Sources */,
 				55275F8C28708D8700B78EB6 /* RequestManager.swift in Sources */,
+				55275F9C287162DA00B78EB6 /* DetailViewModel.swift in Sources */,
 				55275F8E28708EEC00B78EB6 /* Films.swift in Sources */,
+				55275FA02871660D00B78EB6 /* FilmDetail.swift in Sources */,
 				5553B408287020560008944D /* SceneDelegate.swift in Sources */,
 				5553B44B287047190008944D /* Utils.swift in Sources */,
 				55275F962870D48200B78EB6 /* UIImageView+URLSession.swift in Sources */,

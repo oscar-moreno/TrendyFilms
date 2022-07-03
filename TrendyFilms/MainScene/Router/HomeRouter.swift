@@ -26,4 +26,9 @@ class HomeRouter {
     self.sourceView = homeView
   }
   
+  func openDetailView(filmId: String) {
+    let detailViewRouter = DetailRouter(filmId: filmId).detailViewController
+    sourceView?.navigationController?.pushViewController(detailViewRouter, animated: true)
+  }
+  
 }

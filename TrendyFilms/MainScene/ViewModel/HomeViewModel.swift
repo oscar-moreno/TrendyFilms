@@ -25,5 +25,9 @@ class HomeViewModel {
     return requestManager.getPopularFilms()
   }
   
+  func goToDetailView(filmId: String) {
+    homeRouter?.openDetailView(filmId: filmId)
+  }
+  
 }
 
