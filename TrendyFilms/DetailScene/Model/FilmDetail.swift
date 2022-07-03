@@ -9,6 +9,7 @@ import Foundation
 
 struct FilmDetail: Codable {
   
+  let id: Int
   let imagePath: String
   let title: String
   let overview: String
@@ -22,6 +23,7 @@ struct FilmDetail: Codable {
   
   enum CodingKeys: String, CodingKey {
     
+    case id
     case imagePath = "poster_path"
     case title
     case overview

@@ -15,7 +15,7 @@ class DetailView: UIViewController {
   @IBOutlet weak var filmOverview: UILabel!
   @IBOutlet weak var filmRating: UILabel!
   @IBOutlet weak var filmReleaseDate: UILabel!
-  @IBOutlet weak var filmGeneres: UILabel!
+  @IBOutlet weak var filmGenres: UILabel!
   @IBOutlet weak var filmWebsite: UILabel!
   @IBOutlet weak var filmOriginalLanguage: UILabel!
   @IBOutlet weak var filmBudget: UILabel!
@@ -25,6 +25,7 @@ class DetailView: UIViewController {
   var detailViewModel = DetailViewModel()
   var detailRouter = DetailRouter()
   var disposeBag = DisposeBag()
+  var cachedFilms: [FilmDetail] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,7 +39,8 @@ class DetailView: UIViewController {
       .subscribe(on: MainScheduler.instance)
       .observe(on: MainScheduler.instance)
       .subscribe { film in
-        self.displayFilmData(film: film)
+        self.cachedFilms.append(film)
+        self.displayFilmData(film.id)
       } onError: { error in
         print(error)
       } onCompleted: { }
@@ -60,26 +62,28 @@ class DetailView: UIViewController {
         }).disposed(by: disposeBag)
   }
   
-  func displayFilmData(film: FilmDetail) {
+  func displayFilmData(_ filmId: Int) {
     DispatchQueue.main.async {
-      self.getFilmImage(for: film)
-      self.filmTitle.text = film.title
-      self.filmOverview.text = film.overview
-      self.filmRating.text = "Rating: \(String(film.rating))"
-      self.filmReleaseDate.text = "Release date: \(film.releaseDate)"
+      let filmToDisplay = self.cachedFilms.filter{$0.id == filmId}
+      self.getFilmImage(for: filmToDisplay[0])
+      self.filmTitle.text = filmToDisplay[0].title
+      self.filmOverview.text = filmToDisplay[0].overview
+      self.filmRating.text = "Rating: \(String(filmToDisplay[0].rating))"
+      self.filmReleaseDate.text = "Release date: \(filmToDisplay[0].releaseDate)"
       
       var genres = [String]()
-      for genre in film.genres {
+      for genre in filmToDisplay[0].genres {
         genres.append(genre.name)
       }
-      self.filmGeneres.text = "Generes: \(genres.joined(separator: ", "))"
+      self.filmGenres.text = "Generes: \(genres.joined(separator: ", "))"
       
-      self.filmWebsite.text = "Website: \(film.website)"
-      self.filmOriginalLanguage.text = "Original language: \(film.originalLanguage)"
-      self.filmBudget.text = "Bugget: \(film.budget)"
-      self.filmRevenue.text = "Revenue: \(film.revenue)"
+      self.filmWebsite.text = "Website: \(filmToDisplay[0].website)"
+      self.filmOriginalLanguage.text = "Original language: \(filmToDisplay[0].originalLanguage)"
+      self.filmBudget.text = "Bugget: \(filmToDisplay[0].budget)"
+      self.filmRevenue.text = "Revenue: \(filmToDisplay[0].revenue)"
       
     }
+  
   }
   
 }
