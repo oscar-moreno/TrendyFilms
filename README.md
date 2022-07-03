@@ -8,6 +8,7 @@
 </p>
 
 ![screenshot](TrendyFilms/Assets.xcassets/Screenshot.png)
+![screenshot](TrendyFilms/Assets.xcassets/Screenshot-2.png)
 
 ## Code Quality Status
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=oscar-moreno_ApplePie)<br>
@@ -30,7 +31,9 @@
 * APIs
 * JSON Parsing
 * Error handling
+* TableView search
 * RxSwift
+* RxCocoa
 
 ## How To Use
 The app help you to choose a film to watch. It uses The Movie Data Base API (https://www.themoviedb.org) to display current popular films and its most important info. Simply scroll down and select a film to read more info.
