@@ -19,13 +19,13 @@
 		55275F9C287162DA00B78EB6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9B287162DA00B78EB6 /* DetailViewModel.swift */; };
 		55275F9E2871645500B78EB6 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9D2871645500B78EB6 /* DetailRouter.swift */; };
 		55275FA02871660D00B78EB6 /* FilmDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55275F9F2871660D00B78EB6 /* FilmDetail.swift */; };
+		5538ACD42872A9B000226302 /* SearchControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538ACD32872A9B000226302 /* SearchControllerTest.swift */; };
+		5538ACD72872AC9E00226302 /* HomeRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538ACD62872AC9E00226302 /* HomeRouterTest.swift */; };
+		5538ACE12873638F00226302 /* DetailRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538ACE02873638F00226302 /* DetailRouterTest.swift */; };
 		5553B406287020560008944D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B405287020560008944D /* AppDelegate.swift */; };
 		5553B408287020560008944D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B407287020560008944D /* SceneDelegate.swift */; };
 		5553B40F287020590008944D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5553B40E287020590008944D /* Assets.xcassets */; };
 		5553B412287020590008944D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5553B410287020590008944D /* LaunchScreen.storyboard */; };
-		5553B41D287020590008944D /* TrendyFilmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B41C287020590008944D /* TrendyFilmsTests.swift */; };
-		5553B427287020590008944D /* TrendyFilmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B426287020590008944D /* TrendyFilmsUITests.swift */; };
-		5553B429287020590008944D /* TrendyFilmsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B428287020590008944D /* TrendyFilmsUITestsLaunchTests.swift */; };
 		5553B444287025220008944D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B442287025220008944D /* HomeView.swift */; };
 		5553B445287025220008944D /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5553B443287025220008944D /* HomeView.xib */; };
 		5553B447287025D70008944D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553B446287025D70008944D /* HomeRouter.swift */; };
@@ -65,6 +65,9 @@
 		55275F9B287162DA00B78EB6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		55275F9D2871645500B78EB6 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		55275F9F2871660D00B78EB6 /* FilmDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetail.swift; sourceTree = "<group>"; };
+		5538ACD32872A9B000226302 /* SearchControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerTest.swift; sourceTree = "<group>"; };
+		5538ACD62872AC9E00226302 /* HomeRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTest.swift; sourceTree = "<group>"; };
+		5538ACE02873638F00226302 /* DetailRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouterTest.swift; sourceTree = "<group>"; };
 		5553B402287020560008944D /* TrendyFilms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendyFilms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5553B405287020560008944D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5553B407287020560008944D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,10 +75,7 @@
 		5553B411287020590008944D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5553B413287020590008944D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5553B418287020590008944D /* TrendyFilmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendyFilmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5553B41C287020590008944D /* TrendyFilmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyFilmsTests.swift; sourceTree = "<group>"; };
 		5553B422287020590008944D /* TrendyFilmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendyFilmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5553B426287020590008944D /* TrendyFilmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyFilmsUITests.swift; sourceTree = "<group>"; };
-		5553B428287020590008944D /* TrendyFilmsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyFilmsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5553B442287025220008944D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5553B443287025220008944D /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		5553B446287025D70008944D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -136,12 +136,60 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5538ACCF2872A76C00226302 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACD02872A77400226302 /* Search */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5538ACD02872A77400226302 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACD32872A9B000226302 /* SearchControllerTest.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5538ACD52872AC8200226302 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACD62872AC9E00226302 /* HomeRouterTest.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5538ACDB28735F4E00226302 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACCF2872A76C00226302 /* View */,
+				5538ACD52872AC8200226302 /* Router */,
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		5538ACDC28735F6200226302 /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACDF2873637E00226302 /* Router */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		5538ACDF2873637E00226302 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5538ACE02873638F00226302 /* DetailRouterTest.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		5553B3F9287020560008944D = {
 			isa = PBXGroup;
 			children = (
 				5553B404287020560008944D /* TrendyFilms */,
 				5553B41B287020590008944D /* TrendyFilmsTests */,
-				5553B425287020590008944D /* TrendyFilmsUITests */,
 				5553B403287020560008944D /* Products */,
 				77D92E1F07DF968A211ADF93 /* Pods */,
 				8D9DFBEF44970D8567F43512 /* Frameworks */,
@@ -176,18 +224,10 @@
 		5553B41B287020590008944D /* TrendyFilmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5553B41C287020590008944D /* TrendyFilmsTests.swift */,
+				5538ACDB28735F4E00226302 /* HomeScene */,
+				5538ACDC28735F6200226302 /* DetailScene */,
 			);
 			path = TrendyFilmsTests;
-			sourceTree = "<group>";
-		};
-		5553B425287020590008944D /* TrendyFilmsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5553B426287020590008944D /* TrendyFilmsUITests.swift */,
-				5553B428287020590008944D /* TrendyFilmsUITestsLaunchTests.swift */,
-			);
-			path = TrendyFilmsUITests;
 			sourceTree = "<group>";
 		};
 		5553B4352870206D0008944D /* MainScene */ = {
@@ -610,7 +650,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5553B41D287020590008944D /* TrendyFilmsTests.swift in Sources */,
+				5538ACD42872A9B000226302 /* SearchControllerTest.swift in Sources */,
+				5538ACD72872AC9E00226302 /* HomeRouterTest.swift in Sources */,
+				5538ACE12873638F00226302 /* DetailRouterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,8 +660,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5553B429287020590008944D /* TrendyFilmsUITestsLaunchTests.swift in Sources */,
-				5553B427287020590008944D /* TrendyFilmsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
